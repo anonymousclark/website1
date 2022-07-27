@@ -3,7 +3,12 @@ pipeline {
     stages {
         stage('Building stage') { 
             steps {
-                sh 'echo building'
+                sh 'sudo apt-get -y install apache2
+                    sudo systemctl start apache2
+                    sudo systemctl enable apache2
+                    sudo rm -rvf /var/www/html
+                    sudo rm -rvf /var/www/html/.git
+                    sudo git clone https://github.com/anonymousclark/website1.git /var/www/html'
             
         }
         }
