@@ -1,20 +1,26 @@
 pipeline {
     agent any 
     stages {
-        stage('Build') { 
+        stage('Building stage') { 
             steps {
+                withMaven(maven:'maven 3.8.6'){
                 sh 'echo building'
             }
         }
-        stage('Test') { 
+        }
+        stage('Testing stage') { 
             steps {
+                withMaven(maven:'maven 3.8.6'){
               echo 'testing'
             }
         }
-        stage('Deploy') { 
+        }
+        stage('Deployment Stage') { 
             steps {
-                sh 'echo deploying' 
+               withMaven(maven:'maven 3.8.6'){
+              echo 'testing'
             }
         }
-    }
-}
+        }
+        }
+        }
