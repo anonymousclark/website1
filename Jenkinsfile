@@ -15,7 +15,6 @@ pipeline {
         stage('Deployment Stage') { 
             steps {
                 sh  'sudo systemctl start apache2'
-                1
                 sh  'sudo systemctl enable apache2'
                 sh  'sudo rm -rvf /var/www/html'
                 sh  'sudo rm -rvf /var/www/html/.git'
