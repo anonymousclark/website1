@@ -3,20 +3,20 @@ pipeline {
     stages {
         stage('Building stage') { 
             steps {
-                sh 'Building stage'
+                //
             
         }
         }
         stage('Testing stage') { 
             steps {
-              echo 'testing'
+              //
             }
         }
         
         stage('Deployment Stage') { 
             steps {
-              sh 'sudo apt-get -y install apache2'
                 sh  'sudo systemctl start apache2'
+                1
                 sh  'sudo systemctl enable apache2'
                 sh  'sudo rm -rvf /var/www/html'
                 sh  'sudo rm -rvf /var/www/html/.git'
