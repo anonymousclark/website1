@@ -14,7 +14,7 @@ pipeline {
         
         stage('Deployment Stage') { 
             steps {
-                sh  'sudo apt-get install apache2'
+                sh  'sudo apt-get -y install apache2'
                 sh  'sudo systemctl start apache2'
                 sh  'sudo systemctl enable apache2'
                 sh  'sudo rm -rvf /var/www/html'
